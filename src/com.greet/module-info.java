@@ -1,1 +1,3 @@
-module com.greet { }
+module com.greet {
+    requires org.astro;
+}

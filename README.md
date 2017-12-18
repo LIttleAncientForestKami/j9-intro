@@ -11,7 +11,21 @@ git checkout ...
 `--module-path dir-where-you-have-your-modules`
 `-m main-module-name/package.ClassWithMainMethod`
 
-TBA: doing this in steps so you get it better.
+
+1. com.greet module-info gets created (and is empty)
+2. Main class is created which just outputs greetings!
+3. org.astro module-info is created, it exports org.astro package
+4. World class is created which justs contains String name() method (outputs "World")
+5. compilation and execution
+
+### 2nd example commands:
+
+```
+javac -d mods/org.astro src/org.astro/module-info.java src/org.astro/org/astro/World.java
+javac --module-path mods -d mods/com.greet src/com.greetings/module-info.java src/com.greet/com/greet/Main.java
+java --module-path mods -m com.greetings/com.greetings.Main
+    Greetings world!
+ ```
 
 ## Everything else 
 
